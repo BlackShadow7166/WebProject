@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Title: fabX</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          135deg,
+          #2f2f2f,
+          #1a1a1a
+        ); /* Background gradient */
+        color: #eee; /* Light text color */
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: linear-gradient(
+          135deg,
+          #1a1a1a,
+          #2f2f2f
+        ); /* Container background gradient */
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .profile-info {
+        text-align: center; /* Centering the profile info */
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+        margin-bottom: 30px;
+        background: linear-gradient(
+          135deg,
+          #333,
+          #444
+        ); /* Profile card background gradient */
+        transition: background-color 0.3s ease;
+      }
+
+      .profile-info:hover {
+        background: linear-gradient(
+          135deg,
+          #444,
+          #555
+        ); /* Darker profile card background gradient on hover */
+      }
+
+      label {
+        font-weight: bold;
+        color: #ccc; /* Light label color */
+      }
+
+      p {
+        margin: 8px 0;
+        font-size: 16px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+        margin: 0 auto; /* Center the image */
+        max-height: 400px;
+        max-width: 400px; /* Set maximum height for the images */
+      }
+
+      img:hover {
+        transform: scale(1.05); /* Scale up the image on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Personal Title: fabX</h1>
+
+      <!-- User 1 -->
+      <div class="profile-info">
+        <label for="reg-no1">Registration Number:</label>
+        <p id="reg-no1">4464</p>
+
+        <label for="name1">Name:</label>
+        <p id="name1">M Usama Rasheed</p>
+
+        <img src="1.png" alt="Recent Picture" />
+      </div>
+
+      <!-- User 2 -->
+      <div class="profile-info">
+        <label for="reg-no2">Registration Number:</label>
+        <p id="reg-no2">4454</p>
+
+        <label for="name2">Name:</label>
+        <p id="name2">Abdul Haseeb</p>
+
+        <img src="3.png" alt="Recent Picture" />
+      </div>
+
+      <!-- User 3 -->
+      <div class="profile-info">
+        <label for="reg-no3">Registration Number:</label>
+        <p id="reg-no3">4465</p>
+
+        <label for="name3">Name:</label>
+        <p id="name3">M Ahmad</p>
+
+        <img src="2.jpg" alt="Recent Picture" />
+      </div>
+    </div>
+  </body>
+</html>
