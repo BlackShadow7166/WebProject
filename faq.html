@@ -1,59 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--=============== BOXICONS ===============-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/colors/color-1.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/colors/color-1.css" />
 
     <title>Responsive e-commerce website - Crypticalcoder</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
-        
+      <nav class="nav container">
+        <a href="index.html" class="nav_logo">
+          <i class="bx bxs-shopping-bags nav_logo-icon"></i>
+          fabX
+        </a>
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <li class="nav_item">
+              <a href="index.html" class="nav_link">Home</a>
+            </li>
+            <li class="nav_item">
+              <a href="shop.html" class="nav_link">Shop</a>
+            </li>
+            <li class="nav_item">
+              <a href="cart.html" class="nav_link">About</a>
+            </li>
+            <li class="nav_item">
+              <a href="blog.html" class="nav_link">Blog</a>
+            </li>
+            <li class="nav_item">
+              <a href="faq.html" class="nav_link active-link">Faq's</a>
+            </li>
+            <li class="nav_item">
+              <a href="contact.html" class="nav_link">Contact</a>
+            </li>
+          </ul>
+          <div class="nav_close" id="nav-close"><i class="bx bx-x"></i></div>
+        </div>
+        <div class="nav_btns">
+          <div class="Login_toggle" id="login-button">
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="nav_shop" id="cart-shop">
+            <i class="bx bx-shopping-bag"></i>
+          </div>
+          <div class="nav_toggle" id="nav-toggle">
+            <i class="bx bx-grid-alt"></i>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!--=============== CART ===============-->
     <div class="cart" id="cart">
-        
+      <i class="bx bx-x cart_close" id="cart-close"></i>
+      <h2 class="cart_title-center">My Cart</h2>
+      <div class="cart_container">
+        <article class="cart_card">
+          <div class="cart_box">
+            <img src="assets/img/cart-1.png" alt="" class="cart_img" />
+          </div>
+          <div class="cart_details">
+            <h3 class="cart_title">WindBreaker</h3>
+            <span class="cart_price">$12</span>
+            <div class="cart_amount">
+              <div class="cart_amount_content">
+                <span class="cart_amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+                <span class="cart_amount-number">1</span>
+                <span class="cart_amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <i class="bx bx-trash-alt cart_amount-trash"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart_card">
+          <div class="cart_box">
+            <img src="assets/img/cart-2.png" alt="" class="cart_img" />
+          </div>
+          <div class="cart_details">
+            <h3 class="cart_title">Cardigan Hoodie</h3>
+            <span class="cart_price">$16</span>
+            <div class="cart_amount">
+              <div class="cart_amount_content">
+                <span class="cart_amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+                <span class="cart_amount-number">1</span>
+                <span class="cart_amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <i class="bx bx-trash-alt cart_amount-trash"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart_card">
+          <div class="cart_box">
+            <img src="assets/img/cart-3.png" alt="" class="cart_img" />
+          </div>
+          <div class="cart_details">
+            <h3 class="cart_title">Cartoon</h3>
+            <span class="cart_price">$10</span>
+            <div class="cart_amount">
+              <div class="cart_amount_content">
+                <span class="cart_amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+                <span class="cart_amount-number">1</span>
+                <span class="cart_amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <i class="bx bx-trash-alt cart_amount-trash"></i>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="cart_prices">
+        <span class="cart_prices-item">3 item</span>
+        <span class="cart_prices-total">$38</span>
+      </div>
     </div>
 
     <!--=============== LOGIN ===============-->
     <div class="login" id="login">
-        
+      <i class="bx bx-x login_close" id="login-close"></i>
+      <h2 class="login_title-center">Login</h2>
+      <form action="" class="login_form grid">
+        <div class="login_content">
+          <label for="" class="login_label">Email</label>
+          <input type="email" , class="login_input" , />
+        </div>
+
+        <div class="login_content">
+          <label for="" class="login_label">Password</label>
+          <input type="password" , class="login_input" , />
+        </div>
+        <div>
+          <a href="#" class="button">Sign In</a>
+        </div>
+
+        <div>
+          <p class="signup">
+            Not a member? <a href="registration.html">Sign up now</a>
+          </p>
+        </div>
+      </form>
     </div>
 
     <!--=============== MAIN ===============-->
     <main class="main">
-        <!--=============== FAQ'S ===============-->
-        <section class="questions section container">
-            
-        </section>
+      <!--=============== FAQ'S ===============-->
+      <section class="questions section container">
+        <h2 class="breadcrumb_title">FAQ'S Page</h2>
+        <h3 class="breadcrumb_subtitle">Home > <span>FAQ'S </span></h3>
+
+        <div class="questions_container grid">
+          <div class="questions_group">
+            <div class="question_item">
+              <header class="question_header">
+                <i class="bx bx-plus questions_icon"></i>
+                <h3 class="questions_item-title">
+                  Lorem ipsum dolor sit amet.
+                </h3>
+              </header>
+              <div class="questions_content">
+                <p class="questions_description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam cumque laudantium fuga accusantium adipisci, nisi
+                  impedit minima maiores?
+                </p>
+              </div>
+            </div>
+
+            <div class="question_item">
+              <header class="question_header">
+                <i class="bx bx-plus questions_icon"></i>
+                <h3 class="questions_item-title">
+                  Lorem ipsum dolor sit amet.
+                </h3>
+              </header>
+              <div class="questions_content">
+                <p class="questions_description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam cumque laudantium fuga accusantium adipisci, nisi
+                  impedit minima maiores?
+                </p>
+              </div>
+            </div>
+
+            <div class="question_item">
+              <header class="question_header">
+                <i class="bx bx-plus questions_icon"></i>
+                <h3 class="questions_item-title">
+                  Lorem ipsum dolor sit amet.
+                </h3>
+              </header>
+              <div class="questions_content">
+                <p class="questions_description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam cumque laudantium fuga accusantium adipisci, nisi
+                  impedit minima maiores?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="questions_group">
+            <div class="question_item">
+              <header class="question_header">
+                <i class="bx bx-plus questions_icon"></i>
+                <h3 class="questions_item-title">
+                  Lorem ipsum dolor sit amet.
+                </h3>
+              </header>
+              <div class="questions_content">
+                <p class="questions_description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam cumque laudantium fuga accusantium adipisci, nisi
+                  impedit minima maiores?
+                </p>
+              </div>
+            </div>
+
+            <div class="question_item">
+              <header class="question_header">
+                <i class="bx bx-plus questions_icon"></i>
+                <h3 class="questions_item-title">
+                  Lorem ipsum dolor sit amet.
+                </h3>
+              </header>
+              <div class="questions_content">
+                <p class="questions_description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam cumque laudantium fuga accusantium adipisci, nisi
+                  impedit minima maiores?
+                </p>
+              </div>
+            </div>
+
+            <div class="question_item">
+              <header class="question_header">
+                <i class="bx bx-plus questions_icon"></i>
+                <h3 class="questions_item-title">
+                  Lorem ipsum dolor sit amet.
+                </h3>
+              </header>
+              <div class="questions_content">
+                <p class="questions_description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam cumque laudantium fuga accusantium adipisci, nisi
+                  impedit minima maiores?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!--=============== FOOTER ===============-->
     <footer class="footer section">
-        
+      <div class="footer_container container grid">
+        <!--=============== FOOTER content 1 ===============-->
+        <div class="footer_content">
+          <a href="#" class="footer_logo">
+            <i class="bx bxs-shopping-bags footer"></i>
+            fabX
+          </a>
+          <p class="footer_description">
+            Enjoy the biggest sale <br />of your life
+          </p>
+          <div class="footer_social">
+            <a href="#" class="footer_social-link"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a href="#" class="footer_social-link"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a href="#" class="footer_social-link"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+          </div>
+        </div>
+        <!--=============== FOOTER content 2 ===============-->
+        <div class="footer_content">
+          <h3 class="footer_title">About</h3>
+          <ul class="footer_links">
+            <li><a href="#" class="footer_link">About Us</a></li>
+            <li><a href="#" class="footer_link">Customer Support</a></li>
+            <li><a href="#" class="footer_link">Support Center</a></li>
+          </ul>
+        </div>
+        <!--=============== FOOTER content 3 ===============-->
+        <div class="footer_content">
+          <h3 class="footer_title">Our Services</h3>
+          <ul class="footer_links">
+            <li><a href="#" class="footer_link">Shop</a></li>
+            <li><a href="#" class="footer_link">Discounts</a></li>
+            <li><a href="#" class="footer_link">Shipping mode</a></li>
+          </ul>
+        </div>
+        <!--=============== FOOTER content 4 ===============-->
+        <div class="footer_content">
+          <h3 class="footer_title">Our Company</h3>
+          <ul class="footer_links">
+            <li><a href="#" class="footer_link">About Us</a></li>
+            <li><a href="#" class="footer_link">Register</a></li>
+            <li><a href="#" class="footer_link">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <span class="footer_copy">
+        &#169; Crypticalcoder. All rights reserved
+      </span>
     </footer>
 
     <!--=============== SCROLL UP ===============-->
-
+    <a class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollup_icon"></i>
+    </a>
     <!--=============== STYLE SWITCHER ===============-->
-    
+
     <!--=============== SWIPER JS ===============-->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
     <!--=============== JS ===============-->
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>
