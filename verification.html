@@ -146,34 +146,18 @@
     <div class="login" id="login">
       <i class="bx bx-x login_close" id="login-close"></i>
       <h2 class="login_title-center">Login</h2>
-      <form
-        id="loginForm"
-        class="login_form grid"
-        onsubmit="handleLogin(event)"
-      >
+      <form action="" class="login_form grid">
         <div class="login_content">
           <label for="" class="login_label">Email</label>
-          <input
-            id="login_email"
-            name="login_email"
-            type="email"
-            class="login_input"
-            required
-          />
+          <input type="email" , class="login_input" , />
         </div>
 
         <div class="login_content">
           <label for="" class="login_label">Password</label>
-          <input
-            id="login_pass"
-            name="login_pass"
-            type="password"
-            class="login_input"
-            required
-          />
+          <input type="password" , class="login_input" , />
         </div>
         <div>
-          <button type="submit" class="button">Sign In</button>
+          <a href="#" class="button">Sign In</a>
         </div>
 
         <div>
@@ -187,59 +171,52 @@
     <!--=============== MAIN ===============-->
     <main class="main">
       <!--=============== REGISTRATION ===============-->
-      <section class="registration_section reg_container">
-        <div class="registration" id="registration">
-          <h2 class="registration_title-center">Registration</h2>
-          <form
-            id="registrationForm"
-            class="registration_form grid"
-            onsubmit="handleFormSubmit(event)"
-          >
-            <div class="registration_content">
-              <label for="first-name" class="registration_label"
-                >First Name</label
-              >
+      <section class="verification_section">
+        <div class="verification">
+          <h2 class="verification_title-center">Verification</h2>
+          <form action="create_account.html" class="verification_form">
+            <div class="otp_input">
               <input
-                name="name"
                 type="text"
-                id="name"
-                class="registration_input"
+                id="digit1"
+                class="otp_digit"
+                maxlength="1"
                 required
               />
-            </div>
-
-            <div class="registration_content">
-              <label for="email" class="registration_label">Email</label>
               <input
-                name="email"
-                type="email"
-                id="email"
-                class="registration_input"
+                type="text"
+                id="digit2"
+                class="otp_digit"
+                maxlength="1"
                 required
               />
-            </div>
-
-            <div class="registration_content">
-              <label for="password" class="registration_label">Password</label>
               <input
-                name="password"
-                type="password"
-                id="password"
-                class="registration_input"
+                type="text"
+                id="digit3"
+                class="otp_digit"
+                maxlength="1"
+                required
+              />
+              <input
+                type="text"
+                id="digit4"
+                class="otp_digit"
+                maxlength="1"
+                required
+              />
+              <input
+                type="text"
+                id="digit5"
+                class="otp_digit"
+                maxlength="1"
                 required
               />
             </div>
-
             <div>
-              <button type="submit" class="registration_button">
-                Register
-              </button>
+              <button type="submit" class="verification_button">Verify</button>
             </div>
-
             <div>
-              <p class="signup">
-                Already a member? <a href="login.html">Login now</a>
-              </p>
+              <p class="resend">Didn't receive OTP? <a href="#">Resend</a></p>
             </div>
           </form>
         </div>
@@ -314,79 +291,5 @@
 
     <!--=============== JS ===============-->
     <script src="assets/js/main.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </body>
 </html>
-<script>
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    const form = document.getElementById("registrationForm");
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log(JSON.stringify(data));
-
-    fetch("http://localhost:3000/v1/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.status === 201) {
-          return response.json();
-        } else {
-          return response.json().then((data) => {
-            throw new Error(data.message || "Registration failed");
-          });
-        }
-      })
-      .then((data) => {
-        console.log(data);
-        // sendOTP(data.email);
-        // window.location.href = "verification.html";
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Registration failed: " + error.message);
-      });
-  }
-</script>
-<script>
-  function handleLogin(event) {
-    event.preventDefault();
-    const form = document.getElementById("loginForm");
-    const formData = new FormData(form);
-    const data = {
-      email: formData.get("login_email"),
-      password: formData.get("login_pass"),
-    };
-
-    fetch("http://localhost:3000/v1/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Response from backend:", data); // Log the response
-
-        // Check if the response contains tokens
-        if (data.tokens) {
-          alert("Login successful");
-          // Store the tokens or perform actions after successful login
-          localStorage.setItem("authToken", data.tokens.access.token); // Example: storing token in localStorage
-          window.location.href = "index.html"; // Redirect to a dashboard or another page
-        } else {
-          alert("Login failed: " + (data.message || "Unknown error"));
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Login failed. Please try again later.");
-      });
-  }
-</script>

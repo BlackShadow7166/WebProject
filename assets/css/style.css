@@ -943,6 +943,223 @@ input {
 .show-login {
   right: 0;
 }
+/*===============Registration=============*/
+.registration_section {
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+/* Container */
+.reg_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Registration Section */
+.registration_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(
+    120vh - 80px
+  ); /* Adjust to keep distance from header and footer */
+  padding: 100px 0;
+  background-color: #f8f9fa;
+}
+
+/* Registration Form */
+.registration {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.registration:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.registration_title-center {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+
+.registration_form {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.registration_content {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.registration_label {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 0.5rem;
+}
+
+.registration_input {
+  width: 100%;
+  background: #f9f9f9;
+  color: #333333;
+  font-size: 15px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registration_input:focus {
+  border-color: #5a67d8;
+  box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.2);
+  outline: none;
+}
+
+/* Button Styling */
+.registration_button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #ffffff;
+  padding: 0.5rem 1rem; /* Adjusted padding for a more standard size */
+  font-size: 16px;
+  border: none;
+  margin-left: 10%; /* Center the button */
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 80%; /* Adjusted width for better alignment */
+}
+
+.registration_button:hover {
+  background-color: var(--first-color);
+  transform: translateY(-3px);
+}
+
+/* Signup Link */
+.signup {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signup a {
+  color: var(--first-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.signup a:hover {
+  color: var(--first-color);
+}
+/*=============== Verification ===============*/
+.verification_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  background-color: #f8f9fa;
+}
+
+.verification {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.verification:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.verification_title-center {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+
+.verification_form {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.otp_input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.otp_digit {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.otp_digit:focus {
+  border-color: #5a67d8;
+  box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.2);
+  outline: none;
+}
+
+.verification_button {
+  background-color: var(--first-color);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+}
+
+.verification_button:hover {
+  background-color: var(--first-color);
+  transform: translateY(-3px);
+}
+
+.resend {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.resend a {
+  color: var(--first-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.resend a:hover {
+  color: var(--first-color);
+}
+
 /*=============== CART ===============*/
 
 .cart {
