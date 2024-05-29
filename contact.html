@@ -34,7 +34,7 @@
                 <a href="shop.html" class="nav_link">Shop</a>
               </li>
               <li class="nav_item">
-                <a href="cart.html" class="nav_link">About</a>
+                <a href="about.html" class="nav_link">About</a>
               </li>
               <li class="nav_item">
                 <a href="blog.html" class="nav_link">Blog</a>
@@ -143,29 +143,50 @@
 
     <!--=============== LOGIN ===============-->
     <div class="login" id="login">
-        <i class="bx bx-x login_close" id="login-close"></i>
-        <h2 class="login_title-center">Login</h2>
-        <form action="" class="login_form grid">
-          <div class="login_content">
-            <label for="" class="login_label">Email</label>
-            <input type="email" , class="login_input" , />
-          </div>
-  
-          <div class="login_content">
-            <label for="" class="login_label">Password</label>
-            <input type="password" , class="login_input" , />
-          </div>
-          <div>
-            <a href="#" class="button">Sign In</a>
-          </div>
-  
-          <div>
-            <p class="signup">
-              Not a member? <a href="registration.html">Sign up now</a>
-            </p>
-          </div>
-        </form>
-      </div>
+      <i class="bx bx-x login_close" id="login-close"></i>
+      <h2 class="login_title-center">Login</h2>
+      <form
+        id="loginForm"
+        class="login_form grid"
+        onsubmit="handleLogin(event)"
+      >
+        <div class="login_content">
+          <label for="" class="login_label">Email</label>
+          <input
+            id="login_email"
+            name="login_email"
+            type="email"
+            class="login_input"
+            required
+          />
+        </div>
+
+        <div class="login_content">
+          <label for="" class="login_label">Password</label>
+          <input
+            id="login_pass"
+            name="login_pass"
+            type="password"
+            class="login_input"
+            required
+          />
+        </div>
+        <div>
+          <button type="submit" class="button">Sign In</button>
+        </div>
+
+        <div>
+          <p class="signup">
+            Not a member? <a href="registration.html">Sign up now</a>
+          </p>
+        </div>
+        <div>
+          <p class="signup">
+            Sign in as Admin? <a href="adminLogin.html">Admin Login</a>
+          </p>
+        </div>
+      </form>
+    </div>
 
     <!--=============== MAIN ===============-->
     <main class="main">
@@ -297,3 +318,40 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    const form = document.getElementById("loginForm");
+    const formData = new FormData(form);
+    const data = {
+      email: formData.get("login_email"),
+      password: formData.get("login_pass"),
+    };
+
+    fetch("http://localhost:3000/v1/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Response from backend:", data); // Log the response
+
+        // Check if the response contains tokens
+        if (data.tokens) {
+          alert("Login successful");
+          // Store the tokens or perform actions after successful login
+          localStorage.setItem("authToken", data.tokens.access.token); // Example: storing token in localStorage
+          window.location.href = "index.html"; // Redirect to a dashboard or another page
+        } else {
+          alert("Login failed: " + (data.message || "Unknown error"));
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Login failed. Please try again later.");
+      });
+  }
+</script>

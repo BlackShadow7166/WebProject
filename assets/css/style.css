@@ -634,9 +634,146 @@ input {
 }
 
 /*=============== DETAILS PAGE ===============*/
+.details__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 3rem;
+}
+
+.product__images {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.product__img {
+  background-color: var(--container-color);
+  padding: 1.2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.detail__img-tag {
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  background-color: var(--first-color);
+  color: #fff;
+  font-size: var(--small-font-size);
+  padding: 0.16rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.product__img img {
+  width: 150px;
+}
+
+.detail__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  margin-bottom: var(--mb-0-5);
+}
+
+.details__title {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-0-75);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  column-gap: 1.2rem;
+  margin-bottom: var(--mb-1);
+}
+
+.rating span {
+  font-size: var(--small-font-size);
+}
+
+.rating i {
+  margin-right: 0.1rem;
+}
+
+.details__prices {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  margin-bottom: var(--mb-1-5);
+}
+
+.details__price {
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+}
+
+.details__discount {
+  color: var(--first-color);
+  text-decoration: line-through;
+  font-weight: var(--font-medium);
+}
+
+.details__percentage {
+  background-color: var(--title-color);
+  padding: 0.25rem 0.4rem;
+  font-size: var(--smaller-font-size);
+  color: #fff;
+}
+
+.description_title {
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.description__details {
+  margin-bottom: var(--mb-2);
+  font-size: var(--small-font-size);
+}
+
+.details .cart_amount {
+  margin-bottom: var(--mb-2-5);
+}
 
 /*=============== ABOUT PAGE ===============*/
+.about__container {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 7rem;
+}
 
+.about__img {
+  width: 380px;
+  justify-self: center;
+}
+
+.about__title {
+  margin-bottom: var(--mb-1);
+  text-align: left;
+}
+
+.about__description {
+  margin-bottom: var(--mb-2);
+}
+
+.about__detail {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.about__detail-description {
+  display: inline-flex;
+  column-gap: 0.5rem;
+  font-size: var(--small-font-size);
+}
+
+.about__detail-icon {
+  font-size: 1rem;
+  color: var(--first-color);
+  margin-top: 0.15rem;
+}
 /*=============== BLOG PAGE ===============*/
 
 .blog_container {
@@ -1593,3 +1730,5 @@ input {
     font-size: var(--small-font-size);
   }
 }
+
+/* admin page  */

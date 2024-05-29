@@ -1,66 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--=============== BOXICONS ===============-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/colors/color-1.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      class="js-color-style"
+      href="assets/css/colors/color-1.css"
+    />
 
     <title>Responsive e-commerce website - Crypticalcoder</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
-        
+      <nav class="nav container">
+        <a href="index.html" class="nav_logo">
+          <i class="bx bxs-shopping-bags nav_logo-icon"></i>
+          fabX
+        </a>
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <li class="nav_item">
+              <a href="index.html" class="nav_link">Home</a>
+            </li>
+            <li class="nav_item">
+              <a href="shop.html" class="nav_link">Shop</a>
+            </li>
+            <li class="nav_item">
+              <a href="about.html" class="nav_link">About</a>
+            </li>
+            <li class="nav_item">
+              <a href="blog.html" class="nav_link">Blog</a>
+            </li>
+            <li class="nav_item">
+              <a href="faq.html" class="nav_link">Faq's</a>
+            </li>
+            <li class="nav_item">
+              <a href="contact.html" class="nav_link">Contact</a>
+            </li>
+          </ul>
+          <div class="nav_close" id="nav-close"><i class="bx bx-x"></i></div>
+        </div>
+        <div class="nav_btns">
+          <div class="Login_toggle" id="login-button">
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="nav_shop" id="cart-shop">
+            <i class="bx bx-shopping-bag"></i>
+          </div>
+          <div class="nav_toggle" id="nav-toggle">
+            <i class="bx bx-grid-alt"></i>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!--=============== CART ===============-->
     <div class="cart" id="cart">
-        
+      <i class="bx bx-x cart_close" id="cart-close"></i>
+      <h2 class="cart_title-center">My Cart</h2>
+      <div class="cart_container">
+        <article class="cart_card">
+          <div class="cart_box">
+            <img src="assets/img/cart-1.png" alt="" class="cart_img" />
+          </div>
+          <div class="cart_details">
+            <h3 class="cart_title">WindBreaker</h3>
+            <span class="cart_price">$12</span>
+            <div class="cart_amount">
+              <div class="cart_amount_content">
+                <span class="cart_amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+                <span class="cart_amount-number">1</span>
+                <span class="cart_amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <i class="bx bx-trash-alt cart_amount-trash"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart_card">
+          <div class="cart_box">
+            <img src="assets/img/cart-2.png" alt="" class="cart_img" />
+          </div>
+          <div class="cart_details">
+            <h3 class="cart_title">Cardigan Hoodie</h3>
+            <span class="cart_price">$16</span>
+            <div class="cart_amount">
+              <div class="cart_amount_content">
+                <span class="cart_amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+                <span class="cart_amount-number">1</span>
+                <span class="cart_amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <i class="bx bx-trash-alt cart_amount-trash"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart_card">
+          <div class="cart_box">
+            <img src="assets/img/cart-3.png" alt="" class="cart_img" />
+          </div>
+          <div class="cart_details">
+            <h3 class="cart_title">Cartoon</h3>
+            <span class="cart_price">$10</span>
+            <div class="cart_amount">
+              <div class="cart_amount_content">
+                <span class="cart_amount-box">
+                  <i class="bx bx-minus"></i>
+                </span>
+                <span class="cart_amount-number">1</span>
+                <span class="cart_amount-box">
+                  <i class="bx bx-plus"></i>
+                </span>
+              </div>
+              <i class="bx bx-trash-alt cart_amount-trash"></i>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="cart_prices">
+        <span class="cart_prices-item">3 item</span>
+        <span class="cart_prices-total">$38</span>
+      </div>
     </div>
 
     <!--=============== LOGIN ===============-->
     <div class="login" id="login">
-        
+      <i class="bx bx-x login_close" id="login-close"></i>
+      <h2 class="login_title-center">Login</h2>
+      <form
+        id="loginForm"
+        class="login_form grid"
+        onsubmit="handleLogin(event)"
+      >
+        <div class="login_content">
+          <label for="" class="login_label">Email</label>
+          <input
+            id="login_email"
+            name="login_email"
+            type="email"
+            class="login_input"
+            required
+          />
+        </div>
+
+        <div class="login_content">
+          <label for="" class="login_label">Password</label>
+          <input
+            id="login_pass"
+            name="login_pass"
+            type="password"
+            class="login_input"
+            required
+          />
+        </div>
+        <div>
+          <button type="submit" class="button">Sign In</button>
+        </div>
+
+        <div>
+          <p class="signup">
+            Not a member? <a href="registration.html">Sign up now</a>
+          </p>
+        </div>
+        <div>
+          <p class="signup">
+            Sign in as Admin? <a href="adminLogin.html">Admin Login</a>
+          </p>
+        </div>
+      </form>
     </div>
 
     <!--=============== MAIN ===============-->
     <main class="main">
-        <!--=============== DETAILS ===============-->
-        <section class="details section container">
-            
-        </section>
+      <!--=============== DETAILS ===============-->
+      <section class="details section container">
+        <h2 class="breadcrumb_title">Details Page</h2>
+        <h3 class="breadcrumb_subtitle">Home > <span>Details </span></h3>
 
-        <!--=============== RELATED PRODUCTS ===============-->
-        <section class="related__products section">
-            
-        </section>
+        <div class="details__container grid">
+          <div class="product__images grid">
+            <div class="product__img">
+              <div class="detail__img-tag">New</div>
+              <img src="assets/img/details-1.png" alt="" />
+            </div>
+            <div class="product__img">
+              <img src="assets/img/details-2.png" alt="" />
+            </div>
+            <div class="product__img">
+              <img src="assets/img/details-3.png" alt="" />
+            </div>
+            <div class="product__img">
+              <img src="assets/img/details-4.png" alt="" />
+            </div>
+          </div>
+          <div class="product__info">
+            <p class="detail__subtitle">Women > Jacket's</p>
+            <h3 class="details__title">WindBreaker , Denim - Jacket</h3>
+
+            <div class="rating">
+              <div class="stars">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <span class="reviews__count">40 + Reviews</span>
+            </div>
+
+            <div class="details__prices">
+              <span class="details__price">$29.99</span>
+              <span class="details__discount">$14.99</span>
+              <span class="details__percentage">50% OFF</span>
+            </div>
+
+            <div class="details__description">
+              <h3 class="description__title">Product Details</h3>
+              <div class="description__details">
+                <p>Light Gray solid Top, has a boat, 3/4 sleeves</p>
+              </div>
+            </div>
+
+            <div class="cart_details">
+              <div class="cart_amount">
+                <div class="cart_amount_content">
+                  <span class="cart_amount-box">
+                    <i class="bx bx-minus"></i>
+                  </span>
+                  <span class="cart_amount-number">1</span>
+                  <span class="cart_amount-box">
+                    <i class="bx bx-plus"></i>
+                  </span>
+                </div>
+                <i class="bx bx-heart cart_amount-heart"></i>
+              </div>
+
+              <a href="#" class="button">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--=============== RELATED PRODUCTS ===============-->
+      <section class="related__products section">
+        <h2 class="section_title">Related Products</h2>
+
+        <div class="new_container container">
+          <div class="swiper new-swiper">
+            <div class="swiper-wrapper">
+              <!--=============== New Content 1 ===============-->
+              <div class="new_content swiper-slide">
+                <div class="new_tag">New</div>
+                <img src="assets/img/new-1.png" alt="" class="new_img" />
+                <h3 class="new_title">WindBreaker Jacket</h3>
+                <span class="new_subtitle">Accessory</span>
+                <div class="new_prices">
+                  <span class="new_price">$14.99</span>
+                  <span class="new_discount">$29.99</span>
+                </div>
+                <a href="details.html" class="button new_button">
+                  <i class="bx bx-cart-alt new_icon"></i>
+                </a>
+              </div>
+              <!--=============== New Content 2 ===============-->
+              <div class="new_content swiper-slide">
+                <div class="new_tag">New</div>
+                <img src="assets/img/new-2.png" alt="" class="new_img" />
+                <h3 class="new_title">Air Jordan Zipper</h3>
+                <span class="new_subtitle">Accessory</span>
+                <div class="new_prices">
+                  <span class="new_price">$11.99</span>
+                  <span class="new_discount">$21.99</span>
+                </div>
+                <a href="details.html" class="button new_button">
+                  <i class="bx bx-cart-alt new_icon"></i>
+                </a>
+              </div>
+              <!--=============== New Content 3 ===============-->
+              <div class="new_content swiper-slide">
+                <div class="new_tag">New</div>
+                <img src="assets/img/new-3.png" alt="" class="new_img" />
+                <h3 class="new_title">Fur Jacket</h3>
+                <span class="new_subtitle">Accessory</span>
+                <div class="new_prices">
+                  <span class="new_price">$4.99</span>
+                  <span class="new_discount">$9.99</span>
+                </div>
+                <a href="details.html" class="button new_button">
+                  <i class="bx bx-cart-alt new_icon"></i>
+                </a>
+              </div>
+              <!--=============== New Content 4 ===============-->
+              <div class="new_content swiper-slide">
+                <div class="new_tag">New</div>
+                <img src="assets/img/new-4.png" alt="" class="new_img" />
+                <h3 class="new_title">Faleece Jacket</h3>
+                <span class="new_subtitle">Accessory</span>
+                <div class="new_prices">
+                  <span class="new_price">$24.99</span>
+                  <span class="new_discount">$44.99</span>
+                </div>
+                <a href="details.html" class="button new_button">
+                  <i class="bx bx-cart-alt new_icon"></i>
+                </a>
+              </div>
+              <!--=============== New Content 5 ===============-->
+              <div class="new_content swiper-slide">
+                <div class="new_tag">New</div>
+                <img src="assets/img/new-5.png" alt="" class="new_img" />
+                <h3 class="new_title">Nike Hoodie</h3>
+                <span class="new_subtitle">Accessory</span>
+                <div class="new_prices">
+                  <span class="new_price">$7.99</span>
+                  <span class="new_discount">$14.99</span>
+                </div>
+                <a href="details.html" class="button new_button">
+                  <i class="bx bx-cart-alt new_icon"></i>
+                </a>
+              </div>
+              <!--=============== New Content 6 ===============-->
+              <div class="new_content swiper-slide">
+                <div class="new_tag">New</div>
+                <img src="assets/img/new-6.png " alt="" class="new_img" />
+                <h3 class="new_title">Fleece Jacket</h3>
+                <span class="new_subtitle">Accessory</span>
+                <div class="new_prices">
+                  <span class="new_price">$5.99</span>
+                  <span class="new_discount">$12.99</span>
+                </div>
+                <a href="details.html" class="button new_button">
+                  <i class="bx bx-cart-alt new_icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!--=============== FOOTER ===============-->
     <footer class="footer section">
-        
+      <div class="footer_container container grid">
+        <!--=============== FOOTER content 1 ===============-->
+        <div class="footer_content">
+          <a href="#" class="footer_logo">
+            <i class="bx bxs-shopping-bags footer"></i>
+            fabX
+          </a>
+          <p class="footer_description">
+            Enjoy the biggest sale <br />of your life
+          </p>
+          <div class="footer_social">
+            <a href="#" class="footer_social-link"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a href="#" class="footer_social-link"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a href="#" class="footer_social-link"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+          </div>
+        </div>
+        <!--=============== FOOTER content 2 ===============-->
+        <div class="footer_content">
+          <h3 class="footer_title">Our Services</h3>
+          <ul class="footer_links">
+            <li><a href="#" class="footer_link">Customer Support</a></li>
+            <li><a href="#" class="footer_link">Support Center</a></li>
+            <li><a href="#" class="footer_link">Shipping mode</a></li>
+          </ul>
+        </div>
+        <!--=============== FOOTER content 3 ===============-->
+        <div class="footer_content">
+          <h3 class="footer_title">Our Company</h3>
+          <ul class="footer_links">
+            <li><a href="#" class="footer_link">Register</a></li>
+            <li><a href="#" class="footer_link">Contact us</a></li>
+            <li><a href="about.html" class="footer_link">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <span class="footer_copy">
+        &#169; Crypticalcoder. All rights reserved
+      </span>
     </footer>
 
     <!--=============== LIGHTBOX ===============-->
 
-    <!--=============== SCROLL UP ===============-->
+    <div class="lightbox">
+      <div class="lightbox__content">
+        <div class="lightbox__close">&times;</div>
+        <img src="assets/img/details-2.png" alt="" class="lightbox__img" />
+        <div class="lightbox__caption">
+          <div class="caption__text">Windbreaker</div>
+          <div class="caption__counter"></div>
+        </div>
+      </div>
+    </div>
 
+    <div class="lightbox__controls">
+      <div class="prev__item" onclick="prevItem()">
+        <i class="bx bx-chevron-left"></i>
+      </div>
+      <div class="next__item" onclick="nextItem()">
+        <i class="bx bx-chevron-right"></i>
+      </div>
+    </div>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollup_icon"></i>
+    </a>
     <!--=============== STYLE SWITCHER ===============-->
-    
-    <!--=============== SWIPER JS ===============-->
+
+    <div class="style__switcher">
+      <div class="style__swticher-toggler s__icon">
+        <i class="bx bxs-cog bx-spin"></i>
+      </div>
+
+      <h4>Theme Colors</h4>
+
+      <div class="theme__colors js-theme-colors">
+        <button
+          type="button"
+          data-js-theme-color="color-1"
+          class="js-theme-color-item theme__button color-1"
+        >
+          <i class="bx bx-check"></i>
+        </button>
+        <button
+          type="button"
+          data-js-theme-color="color-2"
+          class="js-theme-color-item theme__button color-2"
+        >
+          <i class="bx bx-check"></i>
+        </button>
+        <button
+          type="button"
+          data-js-theme-color="color-3"
+          class="js-theme-color-item theme__button color-3"
+        >
+          <i class="bx bx-check"></i>
+        </button>
+        <button
+          type="button"
+          data-js-theme-color="color-4"
+          class="js-theme-color-item theme__button color-4"
+        >
+          <i class="bx bx-check"></i>
+        </button>
+        <button
+          type="button"
+          data-js-theme-color="color-5"
+          class="js-theme-color-item theme__button color-5"
+        >
+          <i class="bx bx-check"></i>
+        </button>
+      </div>
+    </div>
+
+   <!--=============== SWIPER JS ===============-->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
     <!--=============== JS ===============-->
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    const form = document.getElementById("loginForm");
+    const formData = new FormData(form);
+    const data = {
+      email: formData.get("login_email"),
+      password: formData.get("login_pass"),
+    };
+
+    fetch("http://localhost:3000/v1/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Response from backend:", data); // Log the response
+
+        // Check if the response contains tokens
+        if (data.tokens) {
+          alert("Login successful");
+          // Store the tokens or perform actions after successful login
+          localStorage.setItem("authToken", data.tokens.access.token); // Example: storing token in localStorage
+          window.location.href = "index.html"; // Redirect to a dashboard or another page
+        } else {
+          alert("Login failed: " + (data.message || "Unknown error"));
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Login failed. Please try again later.");
+      });
+  }
+</script>

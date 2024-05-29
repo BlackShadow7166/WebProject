@@ -137,25 +137,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-function sendOTP() {
-  // Simulate sending OTP to the email
-  // In a real application, this would be done server-side
-  let email = document.getElementById("email").value;
-  let otp_value = Math.floor(10000 + Math.random() * 90000);
-  let message_body = `Dear user,\n\nThank you for registering on fabX website. Your OTP for verification is: ${otp_value}\n\nPlease enter this OTP on the verification page to complete your registration.\n\nBest regards,\nThe fabX Team`;
+// function sendOTP() {
+//   // Simulate sending OTP to the email
+//   // In a real application, this would be done server-side
+//   let email = document.getElementById("email").value;
+//   let otp_value = Math.floor(10000 + Math.random() * 90000);
+//   let message_body = `Dear user,\n\nThank you for registering on fabX website. Your OTP for verification is: ${otp_value}\n\nPlease enter this OTP on the verification page to complete your registration.\n\nBest regards,\nThe fabX Team`;
 
-  Email.send({
-    SecureToken: "89624bd8-ba98-4283-9374-a8308b33be07",
-    To: email,
-    From: "musamarasheed7166@gmail.com",
-    Subject: "Email Verification",
-    Body: message_body,
-  }).then((message) => {
-    if (message === "OK") {
-      alert("OTP sent to Your email " + email);
-    }
-  });
-}
+//   Email.send({
+//     SecureToken: "89624bd8-ba98-4283-9374-a8308b33be07",
+//     To: email,
+//     From: "musamarasheed7166@gmail.com",
+//     Subject: "Email Verification",
+//     Body: message_body,
+//   }).then((message) => {
+//     if (message === "OK") {
+//       alert("OTP sent to Your email " + email);
+//     }
+//   });
+// }
 // function generateOTP() {
 //   // Generate a random 5-digit OTP
 //   return Math.floor(10000 + Math.random() * 90000);
@@ -170,3 +170,48 @@ function sendOTP() {
 // } else {
 //   alert("Please enter your email first.");
 // }
+document.addEventListener("DOMContentLoaded", () => {
+  const shopItemsContainer = document.getElementById("shop_items");
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/v1/products");
+      const products = await response.json();
+      console.log("Fetched products:", products); // Log fetched products
+      renderProducts(products);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  const renderProducts = (products) => {
+    if (!shopItemsContainer) {
+      console.error("Shop items container not found");
+      return;
+    }
+    shopItemsContainer.innerHTML = ""; // Clear existing products
+    products.forEach((product) => {
+      console.log("Rendering product:", product); // Log each product being rendered
+      const productElement = document.createElement("div");
+      productElement.classList.add("shop_content");
+      productElement.innerHTML = `
+        <div class="shop_tag">${
+          product.isNewProduct ? "New" : product.isSale ? "Sale" : ""
+        }</div>
+        <img src="${product.imageUrl}" alt="${product.name}" class="shop_img" />
+        <h3 class="shop_title">${product.name}</h3>
+        <span class="shop_subtitle">${product.category}</span>
+        <div class="shop_prices">
+          <span class="shop_price">$${product.price}</span>
+          <span class="shop_discounts">$${product.originalPrice}</span>
+        </div>
+        <a href="details.html?id=${product.id}" class="button shop_button">
+          <i class="bx bx-cart-alt shop_icon"></i>
+        </a>
+      `;
+      shopItemsContainer.appendChild(productElement);
+    });
+  };
+
+  fetchProducts();
+});

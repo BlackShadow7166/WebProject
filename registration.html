@@ -20,7 +20,7 @@
 
     <title>Responsive e-commerce website - Crypticalcoder</title>
   </head>
-  <body>
+  
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
       <nav class="nav container">
@@ -37,7 +37,7 @@
               <a href="shop.html" class="nav_link">Shop</a>
             </li>
             <li class="nav_item">
-              <a href="cart.html" class="nav_link">About</a>
+              <a href="about.html" class="nav_link">About</a>
             </li>
             <li class="nav_item">
               <a href="blog.html" class="nav_link">Blog</a>
@@ -65,7 +65,7 @@
       </nav>
     </header>
 
-    <!--=============== CART ===============-->
+    <!--=============== CART =============== -->
     <div class="cart" id="cart">
       <i class="bx bx-x cart_close" id="cart-close"></i>
       <h2 class="cart_title-center">My Cart</h2>
@@ -179,6 +179,11 @@
         <div>
           <p class="signup">
             Not a member? <a href="registration.html">Sign up now</a>
+          </p>
+        </div>
+        <div>
+          <p class="signup">
+            Sign in as Admin? <a href="adminLogin.html">Admin Login</a>
           </p>
         </div>
       </form>
@@ -324,9 +329,7 @@
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    console.log(JSON.stringify(data));
-
-    fetch("http://localhost:3000/v1/auth/register", {
+    fetch("http://localhost:3000/v1/otp/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -334,7 +337,7 @@
       body: JSON.stringify(data),
     })
       .then((response) => {
-        if (response.status === 201) {
+        if (response.status === 200) {
           return response.json();
         } else {
           return response.json().then((data) => {
@@ -344,8 +347,8 @@
       })
       .then((data) => {
         console.log(data);
-        // sendOTP(data.email);
-        // window.location.href = "verification.html";
+        localStorage.setItem("userEmail", data.email);
+        window.location.href = "verification.html"; // Redirect to OTP verification page
       })
       .catch((error) => {
         console.error("Error:", error);
